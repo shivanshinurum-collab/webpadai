@@ -1,0 +1,492 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "0AF9C23F",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "79.99",
+      "familyShareable" : false,
+      "internalID" : "6759050933",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "2 MFG FUNCTION 2",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course17",
+      "referenceName" : "2 MFG FUNCTION 2",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "59.99",
+      "familyShareable" : false,
+      "internalID" : "6759050740",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "2 MFG STABILITY WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course19",
+      "referenceName" : "2 MFG STABILITY WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "79.99",
+      "familyShareable" : false,
+      "internalID" : "6759050620",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "2MFG CARGO WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course20",
+      "referenceName" : "2MFG CARGO WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "59.99",
+      "familyShareable" : false,
+      "internalID" : "6759050870",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "2MFG FUNCTION 3",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course18",
+      "referenceName" : "2MFG FUNCTION 3",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "59.99",
+      "familyShareable" : false,
+      "internalID" : "6759050998",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "2MFG ORALS FUNCTION 1",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course14",
+      "referenceName" : "2MFG ORALS FUNCTION 1",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "89.99",
+      "familyShareable" : false,
+      "internalID" : "6759050786",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "2MFG TCN WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course21",
+      "referenceName" : "2MFG TCN WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "249.99",
+      "familyShareable" : false,
+      "internalID" : "6759051028",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "ASM ORALS",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course12",
+      "referenceName" : "ASM ORALS",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "249.99",
+      "familyShareable" : false,
+      "internalID" : "6759050828",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "ASM WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course13",
+      "referenceName" : "ASM WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759050678",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CHIEF MATE FUNCTION 1",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course22",
+      "referenceName" : "CHIEF MATE FUNCTION 1",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759050508",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CHIEF MATE FUNCTION 2",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course26",
+      "referenceName" : "CHIEF MATE FUNCTION 2",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759050370",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CHIEF MATE FUNCTION 3",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course27",
+      "referenceName" : "CHIEF MATE FUNCTION 3",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759050466",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CLASS IV - ELECTRICAL ORAL (FN-5)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course28",
+      "referenceName" : "CLASS IV - ELECTRICAL ORAL (FN-5)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "6759047236",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "Class IV - Electrical Written",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course30",
+      "referenceName" : "Class IV - Electrical Written",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "39.99",
+      "familyShareable" : false,
+      "internalID" : "6759050857",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CLASS IV - MEP ORAL (FN-6)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course15",
+      "referenceName" : "CLASS IV - MEP ORAL (FN-6)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "6759050992",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CLASS IV - MOTOR ORAL (FN-4B)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course16",
+      "referenceName" : "CLASS IV - MOTOR ORAL (FN-4B)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "19.99",
+      "familyShareable" : false,
+      "internalID" : "6759047317",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CLASS IV - Naval Written",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course29",
+      "referenceName" : "CLASS IV - Naval Written",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "14.99",
+      "familyShareable" : false,
+      "internalID" : "6759047109",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "CLASS IV - SAFETY ORAL (FN-3)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course31",
+      "referenceName" : "CLASS IV - SAFETY ORAL (FN-3)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "249.99",
+      "familyShareable" : false,
+      "internalID" : "6759050560",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 1",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course23",
+      "referenceName" : "MEO CLASS 1",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "249.99",
+      "familyShareable" : false,
+      "internalID" : "6759050559",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 1 - ORALS",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course24",
+      "referenceName" : "MEO CLASS 1 - ORALS",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "249.99",
+      "familyShareable" : false,
+      "internalID" : "6759050558",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 1 - WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course25",
+      "referenceName" : "MEO CLASS 1 - WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759051196",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - ELECTRICAL WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course3",
+      "referenceName" : "MEO CLASS 2 - ELECTRICAL WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759051137",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - FN3 (SAFETY ORAL)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course4",
+      "referenceName" : "MEO CLASS 2 - FN3 (SAFETY ORAL)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759051168",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - FN4B (MOTOR)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course6",
+      "referenceName" : "MEO CLASS 2 - FN4B (MOTOR)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "49.99",
+      "familyShareable" : false,
+      "internalID" : "6759047326",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - FN5 (ELECTRICAL ORAL)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course5",
+      "referenceName" : "MEO CLASS 2 - FN5 (ELECTRICAL ORAL)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759051176",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - FN6 (MEP)",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course7",
+      "referenceName" : "MEO CLASS 2 - FN6 (MEP)",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "69.99",
+      "familyShareable" : false,
+      "internalID" : "6759051051",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - GENERAL WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course11",
+      "referenceName" : "MEO CLASS 2 - GENERAL WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "79.99",
+      "familyShareable" : false,
+      "internalID" : "6759051053",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - MEP WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course10",
+      "referenceName" : "MEO CLASS 2 - MEP WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "79.99",
+      "familyShareable" : false,
+      "internalID" : "6759050983",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - MOTOR WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course9",
+      "referenceName" : "MEO CLASS 2 - MOTOR WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "99.99",
+      "familyShareable" : false,
+      "internalID" : "6759051336",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - NAVAL WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course2",
+      "referenceName" : "MEO CLASS 2 - NAVAL WRITTEN",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "59.99",
+      "familyShareable" : false,
+      "internalID" : "6759051055",
+      "localizations" : [
+        {
+          "description" : "Full access to study course",
+          "displayName" : "MEO CLASS 2 - SSEP WRITTEN",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.app.marine.wisdom.study.course8",
+      "referenceName" : "MEO CLASS 2 - SSEP WRITTEN",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6758140916",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_developerTeamID" : "7ALJPF39A5",
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 792509110.96778095,
+    "_locale" : "en_US",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
