@@ -121,7 +121,7 @@ struct TestTabView: View {
     func fetchBatches() {
         isLoading = true
         
-        let student_id = UserDefaults.standard.string(forKey: "studentId")
+        let student_id = UserDefaults.standard.string(forKey: "studentId") ?? ""
         var components = URLComponents(string: apiURL.getTestSeriesBatch)
         
         components?.queryItems = [
@@ -129,10 +129,12 @@ struct TestTabView: View {
         ]
         
         guard let url = components?.url else {
-            print("❌ Invalid URL")
+            print("❌ Invalid URL = ")
             isLoading = false
             return
         }
+        print("API = ",apiURL.getTestSeriesBatch)
+        print("Student ID = ", student_id)
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             
@@ -153,7 +155,7 @@ struct TestTabView: View {
             do {
                 let response = try JSONDecoder().decode(BatchCourse.self, from: data)
                 DispatchQueue.main.async {
-                    self.course = response.batchData
+                    self.course = response.batchData ?? []
                 }
             } catch {
                 print("❌ Decode Error:", error)

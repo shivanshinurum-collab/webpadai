@@ -2,7 +2,7 @@
 struct BatchCourse : Codable {
     let status : String
     let msg : String
-    let batchData : [batchData]
+    let batchData : [batchData]?
 }
 
 struct batchData: Codable, Identifiable ,Hashable{

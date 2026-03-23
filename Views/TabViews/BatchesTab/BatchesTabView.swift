@@ -211,6 +211,10 @@ struct BatchesTabView : View {
             URLQueryItem(name: "subcatId", value: subCatId)
         ]
 
+        print("API = ",apiURL.getBatchByCatSubCat)
+        print("Cat ID = ", catId)
+        print("SUbCat ID = ", subCatId)
+        
         guard let url = components?.url else {
             print("❌ Invalid URL")
             return
@@ -232,7 +236,7 @@ struct BatchesTabView : View {
                 print(response)
                 
                 DispatchQueue.main.async {
-                    self.allCourses = response.batchData
+                    self.allCourses = response.batchData ?? []
                 }
             } catch {
                 print("❌ Decode Error:", error)

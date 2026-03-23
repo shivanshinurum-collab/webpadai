@@ -87,7 +87,7 @@ struct NotificationView: View {
                 let decodedResponse = try JSONDecoder().decode(NotificationResponse.self, from: data)
                 
                 DispatchQueue.main.async {
-                    self.notifications = decodedResponse.notification
+                    self.notifications = decodedResponse.notification ?? []
                 }
             } catch {
                 print("❌ Decode Error:", error)

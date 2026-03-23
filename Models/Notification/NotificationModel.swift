@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Root Response
 struct NotificationResponse: Codable {
-    let notification: [AppNotification]
+    let notification: [AppNotification]?
     let status: String
     let msg: String
 }
