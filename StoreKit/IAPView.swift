@@ -14,6 +14,7 @@ struct IAPView: View {
         self._path = path
         
         let finalProductID = "\(uiString.productId)\(productId)"
+        print("Product ID = ",finalProductID)
         _iap = StateObject(wrappedValue: IAPManager(productID: finalProductID))
     }
     

@@ -2,7 +2,7 @@ import SwiftUI
 struct uiString {
     static let AppName = "WEBPADHAI"
     
-    static let productId = "com.app.marine.wisdom.study.course"
+    static let productId = "com.app.webPadhai.course."
     
     static let backSize : CGFloat = 25
     static let titleSize : CGFloat = 20

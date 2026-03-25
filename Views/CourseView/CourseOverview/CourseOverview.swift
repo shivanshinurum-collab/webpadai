@@ -194,6 +194,7 @@ struct CourseOverview: View {
                 ) {
                     Button("Pay using In-App Purchase") {
                         //Task { await iap.buy() }
+                        print("CoURse ID = ",course_id)
                         path.append(Route.IAPView(productId: course_id))
                     }
                     
