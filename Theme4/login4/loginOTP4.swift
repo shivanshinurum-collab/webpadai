@@ -31,7 +31,7 @@ struct loginOTP4 : View {
                         .font(.title2)
                         .foregroundColor(uiColor.ButtonBlue)
                     
-                    Text("Marine Wisdom")
+                    Text("\(uiString.AppName)")
                         .font(.headline)
                         .foregroundColor(.black)
                     
@@ -246,7 +246,9 @@ struct loginOTP4 : View {
         print("mobile =",studentData.mobile)
         
         
-        path.append(Route.TabView4)
+        //path.append(Route.TabView4)
+        path.append(Route.SelectGoalView)
+        
         // Navigate based on user data completeness
         /*if studentData.fullName.isEmpty && studentData.enrollmentId.isEmpty && studentData.userEmail.isEmpty {
             //path.append(Route.RegistrationView)

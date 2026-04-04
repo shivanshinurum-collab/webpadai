@@ -24,7 +24,7 @@ struct loginMobile4 : View {
                         .font(.title2)
                         .foregroundColor(uiColor.ButtonBlue)
                     
-                    Text("Marine Wisdom")
+                    Text("\(uiString.AppName)")
                         .font(.headline)
                         .foregroundColor(.black)
                     

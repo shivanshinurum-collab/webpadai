@@ -119,13 +119,18 @@ struct FoldersView: View {
                         let videoimg = "\(apiURL.docVideoImg)\(item.image ?? "")"
                         Button{
                             if purchaseCodition {
+                                let videoURL = "\(url)\(item.redirectionUrl ?? "")"
+                                print("check")
+                                print(" Video URL = " , videoURL)
+                                
                                 if(item.type == "youtube"){
                                     path.append(Route.YouTubeView(videoId: item.redirectionUrl ?? "" , title: item.name))
                                 }else{
                                     //let videoURL = "https://nbg1.your-objectstorage.com/cdnsecure/app2.lmh-ai.in/uploads/\(item.redirectionUrl ?? "")"
-                                    let videoURL = "\(apiURL.docVideo)\(item.redirectionUrl ?? "")"
+                                    //let videoURL = "\(apiURL.docVideo)\(item.redirectionUrl ?? "")"
                                     //custom url
                                     path.append(Route.VideoView(url: videoURL, title: item.name))
+                                    
                                 }
                             } else {
                                 showAlert = true

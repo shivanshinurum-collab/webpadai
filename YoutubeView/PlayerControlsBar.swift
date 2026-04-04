@@ -13,7 +13,7 @@ struct PlayerControlsBar: View {
     @State private var isPlaying = true
     @State private var isMuted = true
 
-    @State var isLandscape : Bool = false
+    //@State var isLandscape : Bool = false
     
     var body: some View {
         HStack(spacing: 12) {
@@ -43,6 +43,23 @@ struct PlayerControlsBar: View {
                 Image(systemName: isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill")
                     .font(.system(size: 16, weight: .bold))
             }
+            /// PlayBack
+            Button {
+                controller?.backward10()
+            } label: {
+                Image(systemName: "gobackward.10")
+                    .font(.system(size: 16, weight: .bold))
+            }
+
+            Button {
+                controller?.forward10()
+            } label: {
+                Image(systemName: "goforward.10")
+                    .font(.system(size: 16, weight: .bold))
+            }
+            
+            
+            
 
             // Progress bar (simple seek)
             Slider(
@@ -67,23 +84,41 @@ struct PlayerControlsBar: View {
                     .font(.system(size: 16, weight: .bold))
             }
             
+//            Button {
+//                print("Full Screen Button Clicked")
+//                //onFullscreen?()
+//
+//                if isLandscape {
+//                    forcePortrait()
+//                    //setPortrait()
+//
+//                }else{
+//                    forceLandscape()
+//                    //setLandscape()
+//                }
+//                isLandscape.toggle()
+//
+//            } label: {
+//                Image(systemName: "arrow.up.left.and.arrow.down.right")
+//                    .font(.system(size: 20, weight: .bold))
+//            }
+            
             Button {
+                print("Full Screen Button Clicked")
                 
-                //onFullscreen?()
+                let isLandscape = UIScreen.main.bounds.width > UIScreen.main.bounds.height
                 
                 if isLandscape {
                     forcePortrait()
-                    //setPortrait()
-                    
-                }else{
+                } else {
                     forceLandscape()
-                    //setLandscape()
                 }
-                isLandscape.toggle()
+                
             } label: {
                 Image(systemName: "arrow.up.left.and.arrow.down.right")
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
             }
+            
         }
         .padding(.horizontal, 12)
         .frame(height: 44)

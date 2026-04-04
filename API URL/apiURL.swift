@@ -1,6 +1,7 @@
 struct apiURL {
     
     static let mainURL = "https://webpadhai.com/"
+    //static let mainURL = "https://vaishnavionlineclasses.in/"
     static let baseURL = mainURL + "api/"
     
     
@@ -73,7 +74,7 @@ struct apiURL {
     static let getDocItem2 =  baseURL + "Theme3/getListByType/Document/"
     
 }
-
+// https://webpadhai.com/api/Theme3/getListByType/Document/
 //https://limbusmed.com/api/Theme3/getListByType/Document/{batchId}/{folder_id}
 
 /*struct apiURL {

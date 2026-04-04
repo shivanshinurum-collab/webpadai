@@ -86,7 +86,7 @@ struct PlayerSettingsSheet: View {
         VStack(spacing: 16) {
             header("Playback Speed")
 
-            ForEach([0.5,1.0,1.5,2.0], id: \.self) { s in
+            ForEach([0.5,0.75,1.0,1.25,1.5,2.0], id: \.self) { s in
                 Button {
                     state.speed = s
                     controller?.setSpeed(s)

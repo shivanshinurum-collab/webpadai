@@ -45,10 +45,13 @@ struct SplashView: View {
     //            path.append(Route.TabView4)
                 if isLoggedIn {
                     path.append(Route.HomeView)
+                    //path.append(Route.HomeTabView2)
                     //path.append(Route.TabView4)
+                    //path.append(Route.TabView5)
                 } else {
-                    path.append(Route.WelcomeView)
-                    //path.append(Route.loginMobile4)
+                    //path.append(Route.WelcomeView5)
+                    path.append(Route.loginMobile4)
+                    //path.append(Route.WelcomeView)
                 }
             }
         }

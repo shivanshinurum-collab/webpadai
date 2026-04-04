@@ -9,7 +9,7 @@ struct NotificationView: View {
         ZStack {
             VStack(spacing: 10) {
                 ZStack {
-                    Color.blue.opacity(0.8)
+                    uiColor.ButtonBlue
                         .ignoresSafeArea(edges: .top)
 
                     HStack {

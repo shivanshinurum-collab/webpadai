@@ -72,7 +72,7 @@ struct EditProfile : View{
                                     .clipShape(Circle())
                                     .overlay(
                                         Circle()
-                                            .stroke(Color.blue.opacity(0.8), lineWidth: 2)
+                                            .stroke(uiColor.ButtonBlue, lineWidth: 2)
                                     )
                                     
                                 } else {
@@ -140,7 +140,7 @@ struct EditProfile : View{
                             .foregroundColor(uiColor.white)
                             .padding(.vertical , 12)
                             .padding(.horizontal , 65)
-                            .background(.blue.opacity(0.8))
+                            .background(uiColor.ButtonBlue)
                             .cornerRadius(12)
                     }
                     
@@ -162,7 +162,7 @@ struct EditProfile : View{
             fetchData()
         }
         .frame(maxWidth: .infinity , maxHeight: .infinity)
-        .background(.blue.opacity(0.8))
+        .background(uiColor.ButtonBlue)
         .navigationBarBackButtonHidden(true)
     }
     

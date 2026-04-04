@@ -107,13 +107,20 @@ struct CourseContent : View {
                     else if(item.contentType == "Video"){
                         let videoimg = "\(url)video/\(item.image ?? "")"
                         Button{
+                            
                             if purchaseCodition {
+                                let videoURL = "\(url)\(item.redirectionUrl ?? "")"
+                                print("check")
+                                print(" Video URL = " , videoURL)
+                                
                                 if(item.type == "youtube"){
                                     path.append(Route.YouTubeView(videoId: item.redirectionUrl ?? "" , title: item.name))
                                 }else{
-                                    let videoURL = "\(url)\(item.redirectionUrl ?? "")"
+                                    
                                     //custom url
                                     path.append(Route.VideoView(url: videoURL, title: item.name))
+                                    
+                        
                                 }
                             } else {
                                 showAlert = true

@@ -9,11 +9,8 @@ struct uiColor {
     static let empty = Color(.systemBackground)
     static let system = Color(.systemGray5)
     static let lightSystem = Color(.systemGray6)
-    static let ButtonBlue = Color(
-        red: 45/255,
-        green: 169/255,
-        blue: 255/255
-    )
+    //static let ButtonBlue = Color(red: 45/255,green: 169/255,blue: 255/255)
+    static let ButtonBlue = Color.red
     static let Error = Color.red
     static let violet = Color(red: 91/255, green: 104/255, blue: 246/255)
     static let cardLightBlue = Color.blue.opacity(0.3)

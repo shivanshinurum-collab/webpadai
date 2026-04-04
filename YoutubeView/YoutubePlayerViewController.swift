@@ -126,79 +126,111 @@ final class YouTubePlayerViewController: UIViewController, WKScriptMessageHandle
 
     private func loadVideo(_ id: String) {
 
-       let html = """
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            background: black;
-            overflow: hidden;
-            height: 100%;
+        let iframeStyle: String = UIDevice.current.userInterfaceIdiom == .phone
+        ? """
+              html, body {
+                          margin: 0;
+                          padding: 0;
+                          background: black;
+                          overflow: hidden;
+                          height: 100%;
+                      }
+
+                      #container {
+                          position: absolute;
+                          width: 100%;
+                          height: 120%;
+                          top: -60px;
+                          left: 0;
+                          overflow: hidden;
+                      }
+
+                      iframe {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 120%;
+                          border: 0;
+                      }
+              
+              """
+        : """
+           html, body {
+                       margin: 0;
+                       padding: 0;
+                       background: black;
+                       overflow: hidden;
+                       height: 100%;
+                   }
+
+                   #container {
+                       position: absolute;
+                       width: 100%;
+                       height: 120%;
+                       top: -60px;
+                       left: 0;
+                       overflow: hidden;
+                   }
+        iframe { 
+        width: 100%; 
+        height: 100%; 
+        border: none; 
         }
-
-        #container {
-            position: absolute;
-            width: 100%;
-            height: 120%;
-            top: -60px;
-            left: 0;
-            overflow: hidden;
-        }
-
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            border: 0;
-        }
-        </style>
-        </head>
-        <body>
-            <div id="container">
-                <iframe
-                    id="player"
-                        src="https://www.youtube.com/embed/\(id)?enablejsapi=1&playsinline=1&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&fs=0&iv_load_policy=3&origin=https://localhost"
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        
-            <script>
-                var player;
-
-                function onYouTubeIframeAPIReady() {
-                    player = new YT.Player('player', {
-                        events: {}
-                    });
-                }
-
-                function yt(cmd, args) {
-                    if (player) {
-                        player[cmd].apply(player, args || []);
-                    }
-                }
-
-                function ytGetTime() {
-                    if (player) {
-                        var t = player.getCurrentTime();
-                        var d = player.getDuration();
-
-                        window.webkit.messageHandlers.playerTime.postMessage(String(t));
-                        window.webkit.messageHandlers.playerTime.postMessage(String(d));
-                    }
-                }
-            </script>
-
-            <script src="https://www.youtube.com/iframe_api"></script>
-        </body>
-        </html>
         """
+        
+        let html = """
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>
+                
+                \(iframeStyle)
+                 
+                
+                </style>
+                </head>
+                <body>
+                    <div id="container">
+                        <iframe
+                            id="player"
+                                src="https://www.youtube.com/embed/\(id)?enablejsapi=1&playsinline=1&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&fs=0&iv_load_policy=3&origin=https://localhost"
+                            allow="autoplay; encrypted-media; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                
+                    <script>
+                        var player;
+                
+                        function onYouTubeIframeAPIReady() {
+                            player = new YT.Player('player', {
+                                events: {}
+                            });
+                        }
+                
+                        function yt(cmd, args) {
+                            if (player) {
+                                player[cmd].apply(player, args || []);
+                            }
+                        }
+                
+                        function ytGetTime() {
+                            if (player) {
+                                var t = player.getCurrentTime();
+                                var d = player.getDuration();
+                
+                                window.webkit.messageHandlers.playerTime.postMessage(String(t));
+                                window.webkit.messageHandlers.playerTime.postMessage(String(d));
+                            }
+                        }
+                    </script>
+                
+                    <script src="https://www.youtube.com/iframe_api"></script>
+                </body>
+                </html>
+                """
 
         webView.loadHTMLString(html, baseURL: URL(string: "https://localhost"))
     }
@@ -238,6 +270,14 @@ final class YouTubePlayerViewController: UIViewController, WKScriptMessageHandle
         webView?.uiDelegate = nil
     }
     
+    
+    func forward10() {
+        webView.evaluateJavaScript("yt('seekTo', [player.getCurrentTime() + 10, true]);", completionHandler: nil)
+    }
+
+    func backward10() {
+        webView.evaluateJavaScript("yt('seekTo', [player.getCurrentTime() - 10, true]);", completionHandler: nil)
+    }
     
     
 }

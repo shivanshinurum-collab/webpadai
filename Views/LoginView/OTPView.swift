@@ -234,6 +234,7 @@ struct OTPView: View {
         }
         else if !studentData.fullName.isEmpty && !studentData.enrollmentId.isEmpty && !studentData.userEmail.isEmpty {
             path.append(Route.SelectGoalView)
+            //path.append(Route.SelectGoal2)
         }
     }
     

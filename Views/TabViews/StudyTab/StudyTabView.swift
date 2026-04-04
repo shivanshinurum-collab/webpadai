@@ -62,7 +62,7 @@ struct StudyTabView: View {
                         LearningCard(
                             title: uiString.StudyCourseButton,
                             icon: "book",
-                            bgColor: Color.pink.opacity(0.2)
+                            bgColor: Color.purple.opacity(0.2) //Color.pink.opacity(0.2)
                         )
                     }
                     
@@ -72,7 +72,7 @@ struct StudyTabView: View {
                         LearningCard(
                             title: uiString.StudyDownloadButton,
                             icon: "arrow.down.to.line",
-                            bgColor: Color.indigo.opacity(0.2)
+                            bgColor: Color.orange.opacity(0.2) //Color.indigo.opacity(0.2)
                         )
                     }
                     
@@ -82,7 +82,7 @@ struct StudyTabView: View {
                         LearningCard(
                             title: uiString.StudyEbookButton,
                             icon: "books.vertical",
-                            bgColor: Color.yellow.opacity(0.25)
+                            bgColor: Color.red.opacity(0.2) //Color.yellow.opacity(0.25)
                         )
                     }
                     
@@ -92,7 +92,7 @@ struct StudyTabView: View {
                         LearningCard(
                             title: uiString.StudySupportButton,
                             icon: "person.2.fill",
-                            bgColor: Color.cyan.opacity(0.3)
+                            bgColor: Color.mint.opacity(0.2) //Color.cyan.opacity(0.3)
                         )
                     }
                     

@@ -51,7 +51,7 @@ struct SideBar2 :View {
                     
                 }
             }
-            
+/*
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.white)
@@ -65,6 +65,7 @@ struct SideBar2 :View {
                     .font(.system(size: 25))
                     .bold()
             }
+*/
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.white)

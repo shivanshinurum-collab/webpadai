@@ -12,7 +12,7 @@ struct DrawerView : View {
             ZStack(alignment: .bottom){
                 RoundedRectangle(cornerRadius: 26 , style: .continuous)
                     .foregroundColor(.clear)
-                    .background(.blue.opacity(0.7))
+                    .background(uiColor.ButtonBlue)
                 Text(uiString.DrawerTitle)
                     .font(.system(size: 30))
                     .foregroundColor(uiColor.white)

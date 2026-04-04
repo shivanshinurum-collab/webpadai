@@ -10,7 +10,7 @@ struct MyBatchesView : View{
     
     var body: some View {
         ZStack{
-            Color.blue.opacity(0.8)
+            uiColor.ButtonBlue
                 .ignoresSafeArea()
             HStack{
                 Button{
