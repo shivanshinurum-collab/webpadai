@@ -4,6 +4,7 @@ struct apiURL {
     //static let mainURL = "https://vaishnavionlineclasses.in/"
     static let baseURL = mainURL + "api/"
     
+    //https://webpadhai.com/api/MobileApi/generateOTP
     
     //static let mainURL = "https://app2.lmh-ai.in/"
     //static let baseURL = mainURL + "api/"
@@ -64,8 +65,15 @@ struct apiURL {
     
     
     
-    static let limbusmed = "https://limbusmed.com/api/"
-    // MARK: - Theme 2
+//    static let limbusmed = "https://limbusmed.com/api/"
+//    
+//    static let selectGoal2 = limbusmed + "Theme3/getBatchWithCategory"
+//    
+//    static let getNotes2 =  limbusmed + "Theme3/getFolderForVideo/"
+//    static let getTestItem2 = limbusmed +  "Theme3/getListByType/Exam/"
+//    static let getVideoItem2 = limbusmed +  "Theme3/getListByType/Video/"
+//    static let getDocItem2 =  limbusmed + "Theme3/getListByType/Document/"
+     //MARK: - Theme 2
     static let selectGoal2 = baseURL + "Theme3/getBatchWithCategory"
     
     static let getNotes2 =  baseURL + "Theme3/getFolderForVideo/"
@@ -74,7 +82,7 @@ struct apiURL {
     static let getDocItem2 =  baseURL + "Theme3/getListByType/Document/"
     
 }
-// https://webpadhai.com/api/Theme3/getListByType/Document/
+// https://webpadhai.com/api/Theme3/getListByType/Video/
 //https://limbusmed.com/api/Theme3/getListByType/Document/{batchId}/{folder_id}
 
 /*struct apiURL {

@@ -56,6 +56,8 @@ struct TabNotes2: View {
         
         guard let url = URL(string: "\(apiURL.getNotes2)\(course_id)/3" ) else { return }
 
+        print("URL = "+"\(apiURL.getNotes2)\(course_id)/3"  )
+        
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("❌ Error:", error.localizedDescription)

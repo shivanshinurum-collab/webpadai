@@ -53,7 +53,7 @@ struct VideoTab2: View {
         let course_id = UserDefaults.standard.string(forKey: "course_id") ?? ""
         
         guard let url = URL(string: "\(apiURL.getNotes2)\(course_id)/2" ) else { return }
-
+        print("URL = "+"\(apiURL.getNotes2)\(course_id)/2"  )
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("❌ Error:", error.localizedDescription)

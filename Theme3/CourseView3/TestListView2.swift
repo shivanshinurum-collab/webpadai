@@ -73,7 +73,7 @@ struct TestListView2 : View {
             print("❌ Invalid URL")
             return
         }
-        
+        print("URL = "+"\(apiURL.getTestItem2)\(batch_id)/\(folder_id)")
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
             
             if let error {

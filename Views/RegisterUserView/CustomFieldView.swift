@@ -177,6 +177,7 @@ struct RegisterLocationView: View {
 
             DispatchQueue.main.async {
                 path.append(Route.SelectGoalView)
+                //path.append(Route.SelectGoal2)
             }
         }.resume()
     }

@@ -79,7 +79,7 @@ struct VideoListView2: View {
                 print(" No data received")
                 return
             }
-            print("URL = "+"\(apiURL.getDocItem2)\(batch_id)/\(folder_id)" )
+            print("URL = "+"\(apiURL.getDocItem2)\(batch_id)/\(folder_id)")
             do {
                 let response = try JSONDecoder().decode(NotesContentResponse2.self, from: data)
                 

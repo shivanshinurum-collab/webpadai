@@ -190,10 +190,10 @@ struct SideBar2 :View {
             HStack{
                 Spacer()
                 VStack{
-                    Text("v5.0.16")
+                    Text("v1.0.0")
                         .font(.headline)
                         .foregroundColor(.white)
-                    Text("MARINE WISDOM")
+                    Text("WEB PADHAI")
                         .bold()
                         .foregroundColor(.white)
                 }

@@ -9,7 +9,6 @@ struct TestSeriesCard2: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            
             HStack {
                 Spacer()
                 AsyncImage(url: URL(string: imageURL)){ img in
