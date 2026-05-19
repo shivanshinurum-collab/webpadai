@@ -45,7 +45,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 let protector = CustomScreenProtectorKit(window: keyWindow)
                 self.screenProtector = protector
 
-                // ✅ CHECK permission instead of always enabling
+                //  CHECK permission instead of always enabling
                 self.checkScreenshotPermission()
             }
         }
@@ -69,13 +69,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let mobile = UserDefaults.standard.string(forKey: "mobile") ?? ""
 
         if mobile == "1234567890" {
-            // ✅ Allow screenshot
+            //  Allow screenshot
             screenProtector?.disable()
-            print("✅ Screenshot ENABLED")
+            print(" Screenshot ENABLED")
         } else {
-            // ❌ Block screenshot
+            //  Block screenshot
             screenProtector?.enable()
-            print("❌ Screenshot DISABLED")
+            print(" Screenshot DISABLED")
         }
     }
 
@@ -83,9 +83,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     private func requestNotificationPermission() {
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: options) { granted, error in
-            print("🔔 Notification permission: \(granted)")
+            print(" Notification permission: \(granted)")
             if let error = error {
-                print("❌ Notification error: \(error.localizedDescription)")
+                print(" Notification error: \(error.localizedDescription)")
             }
         }
     }
@@ -135,7 +135,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFailToRegisterForRemoteNotificationsWithError error: Error
     ) {
-        print("❌ Failed to register: \(error.localizedDescription)")
+        print(" Failed to register: \(error.localizedDescription)")
     }
 }
 

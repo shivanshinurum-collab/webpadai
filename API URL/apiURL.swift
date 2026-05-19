@@ -1,5 +1,5 @@
 struct apiURL {
-    
+//    https://webpadhai.com/api/home/general_setting
     static let mainURL = "https://webpadhai.com/"
     //static let mainURL = "https://vaishnavionlineclasses.in/"
     static let baseURL = mainURL + "api/"
@@ -60,7 +60,7 @@ struct apiURL {
     static let getNotice = baseURL + "home/get_notice"
     static let getPaymentHistory = baseURL + "home/get_payment_history"
     
-    // MARK: - General Settings
+    // MARK: - General Settings - Payment IDs
     static let generalSetting = baseURL + "home/general_setting"
     
     

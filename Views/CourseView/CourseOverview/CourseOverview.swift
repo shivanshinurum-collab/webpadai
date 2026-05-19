@@ -5,6 +5,12 @@ struct CourseOverview: View {
     
     @State static var isLiveClass: Int = 0
     @State static var isTestSeries: Int = 0
+    @State private var showPayment = false
+    @State private var paymentSuccess = false
+    @State private var paymentId = ""
+    @State private var showSuccessAlert = false
+    @State private var successPaymentId = ""
+    @State var razorKey = ""
     
     let course_id: String
     //let course: batchData
@@ -147,13 +153,20 @@ struct CourseOverview: View {
                     .foregroundColor(uiColor.white)
                     
                     // Buy Button
+//                    Button {
+//                        print("COURSE ID =\(course_id)")
+//                        if(batch?.batchOfferPrice != "0") {
+//                            //showPaymentDialog = true
+//                            path.append(Route.IAPView(productId: course_id))
+//                        }
+//
+//                    }
+                    //MARK: -  Add by Mam
                     Button {
                         print("COURSE ID =\(course_id)")
                         if(batch?.batchOfferPrice != "0") {
-                            //showPaymentDialog = true
-                            path.append(Route.IAPView(productId: course_id))
+                            showPayment = true   // ← sirf ye karo
                         }
-                        
                     } label: {
                         if(batch?.batchOfferPrice == "0") {
                             Text("Free")
@@ -223,8 +236,82 @@ struct CourseOverview: View {
             
         }.onAppear {
             fetchBatches()
+            fetchPaymentIds()
+        }
+        //MARK: - Add by Mam
+        .sheet(isPresented: $showPayment) {
+            RazorpayWebView(
+                studentId: UserDefaults.standard.string(forKey: "studentId") ?? "",
+                batchId: course_id,
+                apiKey: razorKey,
+                amount: Double(batch?.batchOfferPrice ?? "0") ?? 0,
+                
+                paymentSuccess: $paymentSuccess,
+                paymentId: $paymentId,
+                onDismiss: {
+                    showPayment = false
+                },
+                onSuccess: { receivedPaymentId in       //  Ye complete karo
+                    showPayment = false
+                    successPaymentId = receivedPaymentId
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        showSuccessAlert = true
+                    }
+                }
+            )
+        }
+        //  deprecated fix
+        .onChange(of: paymentSuccess) { _, success in
+            if success {
+                showPayment = false
+                print(" Payment Done! ID: \(paymentId)")
+            }
+        }
+        //  Success Alert
+        .alert("Payment Successful! 🎉", isPresented: $showSuccessAlert) {
+            Button("Continue") {
+                showSuccessAlert = false
+            }
+        } message: {
+            Text("Aapka course unlock ho gaya!\nPayment ID: \(successPaymentId)")
         }
     }
+    
+    func fetchPaymentIds(){
+        let components = URLComponents(
+            string: apiURL.generalSetting
+        )
+
+        guard let url = components?.url else {
+            print(" Invalid URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error {
+                print(" API Error:", error.localizedDescription)
+                return
+            }
+
+            guard let data else {
+                print(" No data received")
+                return
+            }
+
+            do {
+                let decodedResponse = try JSONDecoder().decode(AppSettingsResponse.self, from: data)
+                
+                DispatchQueue.main.async {
+                    self.razorKey = decodedResponse.data?.razorpayKeyId ?? ""
+                }
+            } catch {
+                print(" Decode Error:", error)
+               
+            }
+        }.resume()
+    }
+    
+    
     
     func fetchBatches() {
         let student_id = UserDefaults.standard.string(forKey: "studentId")
@@ -258,7 +345,7 @@ struct CourseOverview: View {
                 
                 print("Batch ID = ",course_id)
                 DispatchQueue.main.async {
-                    // ✅ Store the response
+                    //  Store the response
                     self.batch = decodedResponse.batch
                     self.batchResponse = decodedResponse
                     
@@ -273,4 +360,3 @@ struct CourseOverview: View {
         }.resume()
     }
 }
-
