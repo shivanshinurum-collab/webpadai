@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct PricePlanView: View {
 
@@ -45,6 +46,11 @@ struct PricePlanView: View {
                     PricePlanView.selectedPlan = plan
                     selectedIndex = index
                     print("Selected Index:", index)
+                    
+                    //Dynamic Price Plan
+                    PriceManager.shared.selectedPrice   = Double(plan.course_price ?? "0") ?? 0
+                    PriceManager.shared.selectedMultiId = plan.id   // ✅ multi_id update
+                    
                 } label: {
                     HStack(spacing: 12) {
 
@@ -87,6 +93,12 @@ struct PricePlanView: View {
             }
         }.onAppear{
             selectedIndex = 0
+            // Pehle plan ki price PriceManager mein set karo (default)
+            if let firstPlan = multiPrice.first {
+                PricePlanView.selectedPlan = firstPlan
+                PriceManager.shared.selectedPrice   = Double(firstPlan.course_price ?? "0") ?? 0
+                PriceManager.shared.selectedMultiId = firstPlan.id   // ✅ default multi_id
+            }
         }
         .padding()
     }

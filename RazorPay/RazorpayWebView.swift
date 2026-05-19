@@ -191,6 +191,7 @@ struct RazorpayWebView: UIViewRepresentable {
                     
                     self.parent.paymentId = paymentId
                     self.parent.paymentSuccess = true
+                    self.parent.onSuccess(paymentId)   // ✅ CourseOverview ka onSuccess trigger hoga
                     
                     print(" Payment Success!")
                     print("   Payment ID : \(paymentId)")

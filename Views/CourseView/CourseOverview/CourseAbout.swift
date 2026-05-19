@@ -112,7 +112,7 @@ struct CourseAbout: View {
                     }
                     
                     
-                }else if batch.durationType == "4" {
+                }else if (batch.durationType == "4" && batchResponse.purchaseCondition == false) {
                     PricePlanView(multiPrice: multiPrice)
                    
                 }

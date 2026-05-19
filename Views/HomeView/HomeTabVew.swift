@@ -150,6 +150,9 @@ struct HomeTabVew: View {
                 }
                 
             }.navigationBarHidden(showMenu)
+            .background(.white)
+            .toolbarBackground(.white, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
     }
     
     func openWhatsApp(number: String) {

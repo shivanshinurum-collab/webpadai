@@ -63,6 +63,9 @@ struct apiURL {
     // MARK: - General Settings - Payment IDs
     static let generalSetting = baseURL + "home/general_setting"
     
+    // MARK: - Payment - Batch Assignment
+    static let batchAssignToStudent = baseURL + "MobileApi/batchAssignToStudent"
+    
     
     
 //    static let limbusmed = "https://limbusmed.com/api/"
