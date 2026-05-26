@@ -6,6 +6,7 @@ struct LoginEmailView: View {
     @State private var email: String = ""
     @State private var showError: Bool = false
     @State private var errorMessage: String = ""
+    @State var isLoading:Bool = false
     
     var body: some View {
         VStack(spacing: 24) {
@@ -75,17 +76,38 @@ struct LoginEmailView: View {
             
             
             Button {
+                isLoading = true
                 validate()
             } label: {
-                Text(uiString.LoginButton)
-                    .foregroundColor(uiColor.white)
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(uiColor.ButtonBlue)
-                    .cornerRadius(12)
+                if (isLoading){
+                    ProgressView()
+                        .frame(maxWidth: .infinity)
+                        .tint(.white)
+                }else{
+                    Text(uiString.LoginButton)
+                        .frame(maxWidth: .infinity)
+                }
             }
+            .foregroundColor(uiColor.white)
+            .font(.headline)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(uiColor.ButtonBlue)
+            .cornerRadius(12)
             .padding(.horizontal, 30)
+            .disabled(isLoading)
+            
+            //                Text(uiString.LoginButton)
+            //                    .foregroundColor(uiColor.white)
+            //                    .font(.headline)
+            //                    .frame(maxWidth: .infinity)
+            //                    .padding()
+            //                    .background(uiColor.ButtonBlue)
+            //                    .cornerRadius(12)
+            //            }
+            //
+            //            .padding(.horizontal, 30)
+            //            .disabled(isLoading)
             
             
             Button {
@@ -115,12 +137,14 @@ struct LoginEmailView: View {
         let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if trimmedEmail.isEmpty {
+            isLoading = false
             showError = true
             errorMessage = uiString.LoginEmailNullError
             return
         }
         
         if !isValidEmail(trimmedEmail) {
+            isLoading = false
             showError = true
             errorMessage = uiString.LoginEmailValidError
             return
@@ -162,7 +186,12 @@ struct LoginEmailView: View {
             URLQueryItem(name: "token" , value: token),
         ]
         
-        guard let url = components?.url else { return }
+        guard let url = components?.url else {
+                    DispatchQueue.main.async {
+                        isLoading = false
+                    }
+                    return
+                }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -172,17 +201,20 @@ struct LoginEmailView: View {
             
             if let error = error {
                 print("Error:", error.localizedDescription)
+                DispatchQueue.main.async { isLoading = false }
                 return
             }
             
             guard let data = data else {
                 print("No data")
+                DispatchQueue.main.async { isLoading = false }
                 return
             }
             
             print("Response:", String(data: data, encoding: .utf8) ?? "")
             //path.append(Route.OTPView(user: "+91\(mobile)"))
             DispatchQueue.main.async {
+                isLoading = false
                 path.append(Route.OTPView(user: email , isMobile: false) )
             }
                     

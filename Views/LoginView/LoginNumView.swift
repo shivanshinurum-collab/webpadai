@@ -19,6 +19,7 @@ struct LoginNumView: View {
     @State private var mobileNumber: String = ""
     @State private var showError: Bool = false
     @State private var errorMessage: String = ""
+    @State var isLoading :Bool = false
     
     var body: some View {
         VStack(spacing: 24) {
@@ -108,17 +109,39 @@ struct LoginNumView: View {
             
             // MARK: - Login Button
             Button {
+                isLoading = true
                 validate()
             } label: {
-                Text(uiString.LoginButton)
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(12)
+                if (isLoading){
+                    ProgressView()
+                        .frame(maxWidth: .infinity)
+                        .tint(.white)
+                }else{
+                    Text(uiString.LoginButton)
+                        .frame(maxWidth: .infinity)
+                }
             }
+            .foregroundColor(.white)
+            .font(.headline)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.blue)
+            .cornerRadius(12)
             .padding(.horizontal, 30)
+            .disabled(isLoading)
+            
+//            Button {
+//                validate()
+//            } label: {
+//                Text(uiString.LoginButton)
+//                    .foregroundColor(.white)
+//                    .font(.headline)
+//                    .frame(maxWidth: .infinity)
+//                    .padding()
+//                    .background(Color.blue)
+//                    .cornerRadius(12)
+//            }
+//            .padding(.horizontal, 30)
             
             // MARK: - Login With Email
             Button {
@@ -149,12 +172,14 @@ struct LoginNumView: View {
         
         if trimmedNumber.isEmpty {
             showError = true
+            isLoading = false
             errorMessage = uiString.LoginMobileNullError
             return
         }
         
         if trimmedNumber.count != 10 {
             showError = true
+            isLoading = false
             errorMessage = uiString.LoginMobileValidError
             return
         }
@@ -185,7 +210,12 @@ struct LoginNumView: View {
             URLQueryItem(name: "token" , value: token),
         ]
         
-        guard let url = components?.url else { return }
+        guard let url = components?.url else {
+                    DispatchQueue.main.async {
+                        isLoading = false
+                    }
+                    return
+                }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -194,11 +224,13 @@ struct LoginNumView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             
             if let error = error {
+                DispatchQueue.main.async { isLoading = false }
                 print("Error:", error.localizedDescription)
                 return
             }
             
             guard let data = data else {
+                DispatchQueue.main.async { isLoading = false }
                 print("No data")
                 return
             }
@@ -207,6 +239,7 @@ struct LoginNumView: View {
 
             //path.append(Route.OTPView(user: "+91\(mobile)"))
             DispatchQueue.main.async {
+                isLoading = false
                 path.append(Route.OTPView(user: mobile , isMobile: true))
             }
                     

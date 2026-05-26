@@ -190,6 +190,7 @@ struct webpadaiApp: App {
         WindowGroup {
            
             NavigationManager()
+                .preferredColorScheme(.light)
                 .onAppear {
                     // Listen for FCM token updates
                     NotificationCenter.default.addObserver(

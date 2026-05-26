@@ -257,8 +257,8 @@ struct CourseOverview: View {
                         showSuccessAlert = true
                     }
                 }
-            )
-        }
+            )//.presentationDetents([.fraction(0.8)])
+        }//.presentationDetents([.fraction(0.8)])
         //  deprecated fix
         .onChange(of: paymentSuccess) { _, success in
             if success {
@@ -278,6 +278,7 @@ struct CourseOverview: View {
     }
     
     func fetchPaymentIds(){
+        print("Fetch Payment IDs API Run ")
         let components = URLComponents(
             string: apiURL.generalSetting
         )
@@ -300,6 +301,7 @@ struct CourseOverview: View {
             
             do {
                 let decodedResponse = try JSONDecoder().decode(AppSettingsResponse.self, from: data)
+                print("Response = ",decodedResponse)
                 
                 DispatchQueue.main.async {
                     self.razorKey = decodedResponse.data?.razorpayKeyId ?? ""
